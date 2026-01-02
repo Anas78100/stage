@@ -11,8 +11,12 @@ function toggle_text() {
   span.style.display = "block";
 
   formZone.style.display = "none";
+  var welcomeSection = document.getElementById("welcome-form");
+  if (welcomeSection) {
+    welcomeSection.style.display = "none";
+  }
 }
 
-const { chars } = splitText('h4', { words: false, chars: true });
+
 
 

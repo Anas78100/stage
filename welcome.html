@@ -5,22 +5,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Voulez-vous voir mon site ?</title>
-    
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles/style.css">
 
 </head>
 
 <body>
+  <div class="welcome-page">
+    <div class="welcome-box">
+      <h1>Pret a entrer ?</h1>
+      <p class="mb-4">Decouvre mon stage et ce que j'ai appris cette semaine.</p>
+      <div class="welcome-buttons">
+        <button class="btn btn-primary btn-lg" onclick="redirectToIndex()">Oui</button>
+        <button class="btn btn-outline-light btn-lg" id="btn-no" onclick="animateButton()">Non</button>
+      </div>
+    </div>
+  </div>
 
-<div class="welcome-container">
-<h1>Voulez-vous voir mon site ?</h1>
-<div>
-<button class="btn btn-yes" onclick="redirectToIndex()">Oui</button>
+  <script>
+    function redirectToIndex() {
+      window.location.href = 'index.html';
+    }
 
-<button class="btn btn-no" id="btn-no" onclick="animateButton()">Non</button>
-</div>
-</div>
-
-<script src="script.js"></script>
+    function animateButton() {
+      const btn = document.getElementById('btn-no');
+      btn.style.transform = 'translateY(-2px)';
+      setTimeout(() => {
+        btn.style.transform = '';
+      }, 180);
+    }
+  </script>
 </body>
 </html>
