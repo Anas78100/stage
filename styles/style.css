@@ -73,6 +73,11 @@ p, li {
   transform: translateY(-1px);
 }
 
+.navbar-nav {
+  align-items: center;
+  gap: 8px;
+}
+
 .page-wrapper {
   padding-bottom: 80px;
 }
@@ -183,18 +188,16 @@ p, li {
 }
 
 .welcome-text {
-  position: fixed;
-  top: 5px;
-  right: 30px;
-  font-size: 2.2rem;
+  display: none;
+  margin-left: auto;
+  font-size: 1.6rem;
   font-weight: bold;
   font-family: 'Pacifico', cursive;
-  color: white;
-  display: none;
-  z-index: 1050;
-  text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.5),
-    0 0 18px rgba(0, 183, 255, 0.4);
+  color: #e8f1ff;
+  text-shadow: 0 0 12px rgba(74, 216, 255, 0.6);
+  background: linear-gradient(90deg, #4ad8ff, #7b5dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes typewriter {
@@ -206,6 +209,24 @@ p, li {
   to {
     opacity: 1;
     transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+.welcome-text.show {
+  display: block;
+  animation: slideGlow 0.5s ease forwards;
+}
+
+@keyframes slideGlow {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
     filter: blur(0);
   }
 }
@@ -461,6 +482,13 @@ p, li {
   }
   .btn-day {
     width: 100%;
+  }
+  .welcome-text {
+    width: 100%;
+    text-align: right;
+    padding-right: 8px;
+    margin-top: 6px;
+    font-size: 1.4rem;
   }
 }
 
