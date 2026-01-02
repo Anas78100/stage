@@ -9,56 +9,135 @@
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet" />
+  <link href="styles/style.css" rel="stylesheet" />
 
-
-  <title>L' équipe</title>
-
-  
+  <title>Agenda</title>
 </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Stage Anas</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="/index.html">Accueil</a>
-      <a class="nav-item nav-link active" href="/equipe.html">L' équipe</a>
-      <a class="nav-item nav-link active" href="/agenda.html">Agenda</a>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Stage Anas</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="/index.html">Accueil</a>
+        <a class="nav-item nav-link active" href="/equipe.html">L'Equipe</a>
+        <a class="nav-item nav-link active" href="/agenda.html">Agenda</a>
+      </div>
     </div>
-  </div>
-</nav>
-<div>
-   <div class="form-row align-items-center">
-    <div class="col-auto my-1">
-      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-        <option selected>Choisir...</option>
-        <option value="1">Premier jour</option>
-        <option value="2">Deuxième jour</option>
-        <option value="3">Troisième jour</option>
-        <option value="4">Quatrième jour</option>
-        <option value="5">Cinquième jour</option>
-      </select>
+  </nav>
+
+  <header class="agenda-hero text-center">
+    <div class="container py-5">
+      <p class="agenda-eyebrow mb-2">Ma semaine chez ChapsVision</p>
+      <h1 class="mb-3">Agenda de la semaine</h1>
+      <p class="lead mb-0">Choisis un jour pour voir uniquement ce qui s'y passe.</p>
     </div>
-    <div id="tomate" class="col-auto my-1">
-      <h1> Agenda de la Semaine </h1>
-      <div>
- <h2><span> Le premier jour </span></h2>
-<p> Durant la matinée, j' ai assisté à une réunion avec tous les membres de l' équipe afin de donner à chacun des membres une tache à réaliser durant la journée. J' ai appris les bases du balisage HTML puis CSS. J' ai aussi appris quelques touches spécifiques à des actions.
-Après la pause du midi, mon maitre de stage m' a présenté une partie des membres de son équipe avec qui j' ai pu faire connaissance et en savoir plus sur leur travail. En fin de journée, j' ai fini une petite partie de mon site.</p>
-<h2><span> Le deuxième jour </span></h2>
-<p>Durant la matinée, j' ai assisté à une réunion avec tous les membres de l' équipe afin de donner à chacun des membres une tache à réaliser durant la journée, j' ai aussi avancé sur la création de mon site. Après la pause du midi, mon maitre de stage m' a présenté d' autres membres de son équipe, avec qui j' ai discuté pour en savoir plus sur leur métier. En fin d'après midi, j' ai continué à apprendre le balisage HTML et CSS en allant un peu plus dans les détails. </p>
-<h2><span> Le troisième jour </span></h2>
-<p>Durant la matinée, j' ai assisté à une réunion avec tous les membres de l' équipe afin de donner à chacun des membres une tache à réaliser durant la journée. Après la pause du midi, j' ai appris les bases du Javascript, grâce à cela, j' ai fais ma première animation sur mon site.</p>
-<h2><span> Le quatrième jour </span></h2>
-<p>Durant la matinée, j' ai assisté à une réunion avec tous les membres de l' équipe afin de donner à chacun des membres une tache à réaliser durant la journée. Après la pause du midi, </p>
-</div>
-</div>
-<script src="/script.js"></script> 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
-  </body>
+  </header>
+
+  <main class="agenda-page container py-5">
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="day-picker p-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="mb-0">Choisis un jour</h5>
+            <span class="pill">5 jours</span>
+          </div>
+
+          <select class="custom-select agenda-select mb-3" id="daySelect" aria-label="Choisir un jour">
+            <option value="jour1" selected>Premier jour</option>
+            <option value="jour2">Deuxieme jour</option>
+            <option value="jour3">Troisieme jour</option>
+            <option value="jour4">Quatrieme jour</option>
+            <option value="jour5">Cinquieme jour</option>
+          </select>
+
+          <div class="btn-group-vertical w-100 day-buttons" role="group" aria-label="Choix du jour">
+            <button type="button" class="btn btn-day active" data-day-target="jour1">Premier jour</button>
+            <button type="button" class="btn btn-day" data-day-target="jour2">Deuxieme jour</button>
+            <button type="button" class="btn btn-day" data-day-target="jour3">Troisieme jour</button>
+            <button type="button" class="btn btn-day" data-day-target="jour4">Quatrieme jour</button>
+            <button type="button" class="btn btn-day" data-day-target="jour5">Cinquieme jour</button>
+          </div>
+
+          <p class="mini-hint mt-3 mb-0">Utilise les boutons ou le menu deroulant. Un seul jour s'affiche a la fois.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <article class="day-card active" data-day="jour1" aria-hidden="false">
+          <span class="day-chip">Jour 1</span>
+          <h3 class="mt-3">Le premier jour</h3>
+          <p>Durant la matinee, j' ai assiste a une reunion avec tous les membres de l' equipe afin de donner a chacun des membres une tache a realiser durant la journee. J' ai appris les bases du balisage HTML puis CSS. J' ai aussi appris quelques touches specifiques a des actions. Apres la pause du midi, mon maitre de stage m' a presente une partie des membres de son equipe avec qui j' ai pu faire connaissance et en savoir plus sur leur travail. En fin de journee, j' ai fini une petite partie de mon site.</p>
+        </article>
+
+        <article class="day-card" data-day="jour2" aria-hidden="true">
+          <span class="day-chip">Jour 2</span>
+          <h3 class="mt-3">Le deuxieme jour</h3>
+          <p>Durant la matinee, j' ai assiste a une reunion avec tous les membres de l' equipe afin de donner a chacun des membres une tache a realiser durant la journee, j' ai aussi avance sur la creation de mon site. Apres la pause du midi, mon maitre de stage m' a presente d' autres membres de son equipe, avec qui j' ai discute pour en savoir plus sur leur metier. En fin d'apres midi, j' ai continue a apprendre le balisage HTML et CSS en allant un peu plus dans les details.</p>
+        </article>
+
+        <article class="day-card" data-day="jour3" aria-hidden="true">
+          <span class="day-chip">Jour 3</span>
+          <h3 class="mt-3">Le troisieme jour</h3>
+          <p>Durant la matinee, j' ai assiste a une reunion avec tous les membres de l' equipe afin de donner a chacun des membres une tache a realiser durant la journee. Apres la pause du midi, j' ai appris les bases du Javascript, grace a cela, j' ai fais ma premiere animation sur mon site.</p>
+        </article>
+
+        <article class="day-card" data-day="jour4" aria-hidden="true">
+          <span class="day-chip">Jour 4</span>
+          <h3 class="mt-3">Le quatrieme jour</h3>
+          <p>Durant la matinee, j' ai assiste a une reunion avec tous les membres de l' equipe afin de donner a chacun des membres une tache a realiser durant la journee. Apres la pause du midi,</p>
+        </article>
+
+        <article class="day-card" data-day="jour5" aria-hidden="true">
+          <span class="day-chip">Jour 5</span>
+          <h3 class="mt-3">Le cinquieme jour</h3>
+          <p>Notes pour le cinquieme jour a completer.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dayButtons = document.querySelectorAll('.btn-day');
+      const dayCards = document.querySelectorAll('.day-card');
+      const select = document.getElementById('daySelect');
+
+      const showDay = (dayKey) => {
+        dayCards.forEach((card) => {
+          const isActive = card.dataset.day === dayKey;
+          card.classList.toggle('active', isActive);
+          card.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+        });
+
+        dayButtons.forEach((btn) => {
+          btn.classList.toggle('active', btn.dataset.dayTarget === dayKey);
+        });
+
+        if (select && select.value !== dayKey) {
+          select.value = dayKey;
+        }
+      };
+
+      dayButtons.forEach((btn) => {
+        btn.addEventListener('click', () => showDay(btn.dataset.dayTarget));
+      });
+
+      if (select) {
+        select.addEventListener('change', (event) => showDay(event.target.value));
+      }
+
+      const initialDay = select ? select.value : dayButtons[0]?.dataset.dayTarget;
+      if (initialDay) {
+        showDay(initialDay);
+      }
+    });
+  </script> 
+  <script src="/script.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+</body>
 </html>

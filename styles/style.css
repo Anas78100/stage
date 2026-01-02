@@ -116,5 +116,136 @@ h1, h2 {
 font-family: "Pacifico", cursive;
 }
 
+/* Agenda */
+.agenda-hero {
+  background: radial-gradient(circle at 20% 20%, #1b2a3a, #0c1018 55%);
+  border-bottom: 1px solid #1f2a3a;
+}
+
+.agenda-hero h1 {
+  color: #e8f1ff;
+}
+
+.agenda-hero .lead {
+  color: #9fb3c8;
+}
+
+.agenda-eyebrow {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6ddcff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.agenda-page {
+  color: #e6ecf5;
+}
+
+.day-picker {
+  background: #121826;
+  border: 1px solid #1f2c3e;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.pill {
+  background: rgba(47, 181, 255, 0.12);
+  color: #6ddcff;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.agenda-select {
+  background-color: #0f172a;
+  border: 1px solid #1f2c3e;
+  color: #e6ecf5;
+}
+
+.agenda-select:focus {
+  box-shadow: 0 0 0 0.2rem rgba(77, 174, 240, 0.35);
+  border-color: #3baed4;
+}
+
+.btn-day {
+  text-align: left;
+  background: linear-gradient(135deg, #152238, #0f172a);
+  border: 1px solid #24344d;
+  color: #d9e2f1;
+  padding: 12px 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+}
+
+.btn-day:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.btn-day.active {
+  background: linear-gradient(135deg, #4ad8ff, #2fb5ff);
+  border-color: transparent;
+  color: #0c1118;
+  box-shadow: 0 8px 24px rgba(47, 181, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.day-buttons .btn-day:last-child {
+  margin-bottom: 0;
+}
+
+.day-card {
+  display: none;
+  background: linear-gradient(145deg, #111827, #0d1320);
+  border: 1px solid #1f2c3e;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.day-card.active {
+  display: block;
+  animation: fadeUp 0.25s ease-out;
+}
+
+.day-chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(47, 181, 255, 0.15);
+  color: #6ddcff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.day-card h3 {
+  color: #e8f1ff;
+}
+
+.day-card p {
+  color: #c9d7e8;
+  line-height: 1.7;
+}
+
+.mini-hint {
+  font-size: 0.95rem;
+  color: #9fb3c8;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
